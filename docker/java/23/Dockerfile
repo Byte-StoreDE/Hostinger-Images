@@ -17,5 +17,11 @@ ENV         USER=process HOME=/home/process
 # Define Workdir.
 WORKDIR     /home/process
 
+# Define Default Volume.
+VOLUME /home/process
+
+# Define Default Volume.
+VOLUME /home/process
+
 COPY        ./../entrypoint.sh /entrypoint.sh
 CMD         [ "/bin/bash", "/entrypoint.sh" ]
