@@ -42,4 +42,4 @@ jobs:
           platforms: linux/amd64,linux/arm64
           push: true
           tags: |
-            ghcr.io/bytestore/images:java-${{ matrix.tag }}
+            ghcr.io/Byte-StoreDE/images:java-${{ matrix.tag }}
