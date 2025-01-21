@@ -22,11 +22,10 @@ java -version
 # Replace "{{VARIABLE}}" with the shell variable syntax "${VARIABLE}",
 # evaluate the string, and replace values automatically.
 #PARSED=$(echo "${STARTUP}" | sed -e 's/{{/${/g' -e 's/}}/}/g' | eval echo "$(cat -)")
-PARSED=`eval echo $(echo ${STARTUP} | sed -e 's/{{/${/g' -e 's/}}/}/g')`
+PARSED=$(eval echo "$(echo ${STARTUP} | sed -e 's/{{/${/g' -e 's/}}/}/g')")
 
-# Print the command that will be executed and execute it in the process's environment.
+# Print the command that will be executed
 printf "${PROMPT} \033[0m%s\n" "$PARSED"
 
-# Execute the prepared command with the process's environment variables.
-# (SC2086 warning about unsafe variable use is ignored here.)
-exec env ${PARSED}
+# Execute the command with proper quoting
+exec env bash -c "${PARSED}"
