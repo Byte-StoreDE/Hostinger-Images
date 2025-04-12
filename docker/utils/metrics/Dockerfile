@@ -23,7 +23,7 @@ RUN /bin/sh -c rm -rf /var/lib/apt/lists/* # buildkit
 RUN pip install pyCLI==2.0.3 psutil==4.2.0 requests==2.10.0 python-json-logger==0.1.5
 
 # Copy Script.
-COPY ./host-stats-logger.py /host-stats-logger.py
+COPY docker/utils/metrics/host-stats-logger.py /host-stats-logger.py
 
 ENTRYPOINT ["python -u /host-stats-logger.py"]
 
