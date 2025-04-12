@@ -20,7 +20,7 @@ RUN /bin/sh -c apt-get clean
 RUN /bin/sh -c rm -rf /var/lib/apt/lists/* # buildkit
 
 # Copy Script.
-COPY host-stats-logger.py /host-stats-logger.py
+COPY ./host-stats-logger.py /host-stats-logger.py
 
 ENTRYPOINT ["python -u /host-stats-logger.py"]
 
