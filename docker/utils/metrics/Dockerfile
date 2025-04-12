@@ -19,6 +19,7 @@ RUN /bin/sh -c apt-get clean
 # Remove Lists.
 RUN /bin/sh -c rm -rf /var/lib/apt/lists/* # buildkit
 
+# Install Dependencies.
 RUN pip install pyCLI==2.0.3 psutil==4.2.0 requests==2.10.0 python-json-logger==0.1.5
 
 # Copy Script.
