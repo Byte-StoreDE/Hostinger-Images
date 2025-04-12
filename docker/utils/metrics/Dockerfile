@@ -22,8 +22,17 @@ RUN /bin/sh -c rm -rf /var/lib/apt/lists/* # buildkit
 # Install Dependencies.
 RUN pip install pyCLI==2.0.3 psutil==4.2.0 requests==2.10.0 python-json-logger==0.1.5
 
+# Define Enviroment for User.
+ENV USER=process HOME=/home/process
+
+# Define Workdir.
+WORKDIR /home/process
+
+# Define Default Volume.
+VOLUME /home/process
+
 # Copy Script.
-COPY docker/utils/metrics/host-stats-logger.py /host-stats-logger.py
+COPY ./host-stats-logger.py /host-stats-logger.py
 
 ENTRYPOINT ["python -u /host-stats-logger.py"]
 
