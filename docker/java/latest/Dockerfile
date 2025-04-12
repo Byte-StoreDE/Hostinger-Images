@@ -1,3 +1,4 @@
+MAINTAINER Jan Heil (www.byte-store.de)
 FROM        --platform=$TARGETOS/$TARGETARCH eclipse-temurin:11-jdk-focal
 
 # Add Author Notice.
