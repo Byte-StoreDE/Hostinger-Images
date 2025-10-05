@@ -1,4 +1,3 @@
-MAINTAINER Jan Heil (www.byte-store.de)
 FROM        --platform=$TARGETOS/$TARGETARCH eclipse-temurin:17-jdk-jammy
 
 # Add Author Notice.

@@ -1,6 +1,5 @@
 FROM debian:latest
 
-MAINTAINER Jan Heil (www.byte-store.de)
 ENV DEBIAN_FRONTEND=noninteractive
 
 # Add Author Notice.
